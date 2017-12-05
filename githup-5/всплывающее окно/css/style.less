@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'ProximaNova_reg ';
+    src: url('../fonts/ProximaNova-Regular.eot');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Regular.woff') format('woff'),
+        url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
+        url('../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova_bold';
+    src: url('../fonts/ProximaNova-Bold.eot');
+    src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Bold.woff') format('woff'),
+        url('../fonts/ProximaNova-Bold.ttf') format('truetype'),
+        url('../fonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@icon: #70c849; /* фон иконок */
+@button: #fbb202; /* фон кнопки */
+@fon: #f5f5f5; /* фон странички */
+@text: #fff; /* текст на кнопке белый */
+@on-text: #292929; /* основной цвет текста */
+@border-input: #dddddd;
+
+.reg(){
+	font-family: 'ProximaNova_reg', sans-serif;
+}
+.bold(){
+	font-family: 'ProximaNova_bold', sans-serif;
+}
+
+html{
+	font-size: 10px;
+}
+body{
+	.reg();
+}
+a:hover{
+	text-decoration: none;
+}
+button, input, a, textarea{
+	&:focus{
+		outline: none;
+	}
+}
+section{
+	padding: 10rem 0px;
+}
+
+/*  */
+
+.header{
+	height: 7rem;
+}
+.phone-link{
+	display: inline-block;
+	.bold();
+	text-align: right;
+	color: @on-text;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2rem;
+	height: 7rem;
+	line-height: 7rem;
+}
+.wrap{
+	display: table;
+	width: 100%;
+	height: 7rem;
+	&-blok{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: right;
+	}
+}
+.button{
+	font-size: 1.2rem;
+	background-color: @button;
+	color: @text;
+	padding: 1rem 3rem;
+	border: none;
+	border-radius: 8px;
+	text-transform: uppercase;
+	transition: all 0.2s;
+	&:hover{
+		cursor: pointer;
+		/* background-color: lighten(@button, 10%); */
+		background-color: darken(@button, 5%);
+	}
+}
+
+/*  */
+
+.main{
+		padding: 3rem 0; 
+	 	background: url(../img/fon.png) center center no-repeat; 
+	&-content{
+		padding-top: 6rem;
+	}
+	&-header{
+		.bold();
+		font-size: 4rem;
+		padding-bottom: 2rem;
+		margin: 0;
+		color:@on-text;
+		text-transform: uppercase;
+		line-height: 1.5;
+	}
+	&-text{
+		font-size: 1.3rem;
+		color:@on-text;
+		padding-bottom: 2rem;
+	}
+	span{
+		display: inline-block;
+		padding: 2rem 3rem;
+		font-size: 1.8rem;
+		background-color: @icon;
+		color: @text;
+		text-align: center;
+		strong{
+			font-size: 3rem;
+			.bold();
+		}
+	}
+	&-text1{
+		display: block;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		margin-top: 2rem;
+		.bold();
+	}
+	&-form{
+		background-color: @text;
+		padding: 4rem 5rem;
+		text-align: center;
+		&-text2{
+		font-size: 1.7rem;
+		padding-bottom: 2rem;
+		strong{
+			font-size: 1.8rem;
+			}
+		} 
+		&-input{
+			display: block;
+			border-radius: 10px;
+			width: 100%;
+			padding: 1.5rem;
+			margin: 2rem 0;
+		}
+		label{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			padding: 0.5rem;
+			font-size: 1.3rem;
+			background-color: @text;
+		}
+		&-btn{
+			font-size: 1.4rem;
+			display: block;
+			width: 100%;
+			height: 5.5rem;
+		}
+	}
+}
+/*  */
+.popup{
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5);
+	&-content{
+		position: fixed;
+		top: 10%;
+		left: 50%;
+		background-color: @text;
+		transform: translateX(-50%);
+		padding: 2rem 4rem;
+		text-align: center;
+	}
+	&-form{
+		margin-top: 3rem;
+		padding: 0;
+	}
+	&-close{
+		position: absolute;
+		top: -1.5rem;
+		right: -2rem;
+		width: 2rem;
+		height: 2rem;
+		text-align: center;
+		border: none;
+		background-color: transparent;
+		font-size: 3rem;
+		color: @text;
+	}
+	&-header{
+		.bold();
+	}
+}
+
+@media(max-width: 991px){
+	.main{
+		/* background-position: top right; */
+	}
+	.main-content{
+		padding-top: 1rem;
+	}
+	.phone-link{
+		text-align: center;
+	}
+	.main-title{
+		text-align: center;
+		padding-bottom: 3rem;
+	}
+}
+
+@media(max-width: 767px){
+	.header{
+		text-align: center;
+	}
+	.wrap-blok{
+		text-align: center;
+	}
+}
